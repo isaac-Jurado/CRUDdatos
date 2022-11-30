@@ -1,0 +1,85 @@
+body{
+    height: 100%;
+    background: linear-gradient(90deg, #49a09d, #5f2c82);
+    margin: 0;
+    font-weight: 100;
+    color: rgb(240, 240, 240);
+}
+.form-control{
+    background-color: rgba(1, 1, 105, 0.517);
+    color: rgb(217, 218, 220);
+}
+
+.form-control:hover{
+    background-color: rgba(1, 1, 105, 0.517);
+    color: aliceblue;
+    border:solid 4px;
+    border-color:rgb(119, 255, 0);
+}
+.container th h1 {
+    font-weight: bold;
+    font-size: 1em;
+text-align: left;
+color: #751818;
+}
+
+.container td {
+    font-weight: normal;
+    font-size: 1em;
+    box-shadow: 0 2px 2px -2px #e30404;
+}
+
+.containe {
+    text-align: center  ;
+    overflow: hidden;
+    width: 800px;
+    margin: 0 auto;
+    display: table;
+    padding: 0 0 8em 0;
+}
+
+.containe td, .container th {
+    padding-bottom: 2%;
+    padding-top: 2%;
+    padding-left:-22%;  
+}
+
+/*! primera fila fondo */
+.containe tr:nth-child(odd) {
+    background-color: #ca0ceb25;
+}
+
+/*! segunda fila fondo */
+.containe tr:nth-child(even) {
+    background-color: #054cf236;
+}
+/*! modifica el color de las cabeceras */
+.containe th {
+    background-color: #f315bf4b;
+}
+/* !cambia el color solo de la primera fila */
+.containe td:first-child { color: #d11ce5; }
+/*! sombra y color de las fila al usar hover */
+.containe tr:hover {
+    background-color: #f410e13f;
+    box-shadow: 16px 16px 16px -16px #a1a908;
+}
+/*! esto nos muestra el color que da el efecto de sobresalir */
+.containe td:hover {
+background: linear-gradient(65deg, #08e4ca, #d0f320);
+color: #010101f9;
+font-weight: bold;
+/*! esto es el que da el efecto  */
+
+transform: translate3d(9px, -2px, 0);
+
+transition-delay: 0s;
+    transition-duration: 0.4s;
+    transition-property: all;
+transition-timing-function: line;
+}
+
+@media (max-width: 800px) {
+.containe td:nth-child(4),
+.containe th:nth-child(4) { display: none; }
+}

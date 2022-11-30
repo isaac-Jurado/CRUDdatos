@@ -1,0 +1,111 @@
+doctype html
+html
+    head
+    title Bootstrap demo
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    style
+        include style.css
+
+body.im
+    .container.d-flex.justify-content-center
+        .row 
+            .col 
+                h1.animate__animated.animate__backInDown.animate__duration-1s Control de Extra-Escolares
+    .container
+        .row.d-flex.justify-content-center
+            .col-8 
+                form.shadow-lg.p-3.mb-5.bg-gradient.glass.rounded.animate__animated.animate__backInDow.animate-delay-3s(action="/create" method="POST")
+                    fieldset
+                        legend Datos del contacto
+                        .row 
+                            .col    
+                                .mb-3
+                                    label.form-label(for="hardware") Hardware
+                                    input.form-control#hardware(type="text" aria-describedby="hardwareHelp" name="hardware" placeholder="hardware ")
+                                    .form-text.text-light#hardwareHelp Por favor ingresa un hardware.
+                            .col 
+                                .mb-3
+                                    label.form-label(for="nombre") Nombre
+                                    input.form-control#nombre(type="nombre" aria-describedby="nombreHelp" name="nombre" placeholder="nombre ")
+                                    .form-text.text-light#nombreHelp Por favor ingresa un nombre valido.
+                        .row 
+                            .col         
+                                .mb-3
+                                    label.form-label(for="modelo") Modelo
+                                    input.form-control#modelo(type="text" aria-describedby="modeloHelp" name="modelo" placeholder="modelo")
+                                    .form-text.text-light#modeloHelp Por favor ingresa un modelo valido.   
+                            .col
+                                .mb-3 
+                                    label.form-label(for="marca") Marca
+                                    input.form-control#marca(type="text" aria-describedby="marcaHelp" name="marca" placeholder="Marca")
+                                    .form-text.text-light#marcaHelp Por favor ingresa una marca valida.
+                        .row 
+                            .col         
+                                .mb-3
+                                    label.form-label(for="descripcion") Descripcion
+                                    input.form-control#descripcion(type="text" aria-describedby="descripcionHelp" name="descripcion" placeholder="descripcion")
+                                    .form-text.text-light#descripcionHelp Por favor ingresa una descripcion.   
+                            .col
+                                .mb-3 
+                                    label.form-label(for="lanzamiento") Año de lanzamiento
+                                    input.form-control#lanzamiento(type="text" aria-describedby="lanzamientoHelp" name="lanzamiento" placeholder="año de lanzamiento")
+                                    .form-text.text-light#lanzamientoHelp Por favor ingresa un año valido. 
+                        .row 
+                            .col 
+                                .mb-3
+                                    label.form-label(for="link") Link de imagen
+                                    input.form-control#link(type="text" aria-describedby="linkHelp" name="link" placeholder="link de imagen")
+                                    .form-text.text-light#linkHelp Por favor ingresa una url valida
+                    .d-flex.justify-content-end
+                        button.btn.btn-primary(type="submit") Guardar contacto            
+    .container.d-flex.justify-content-center.containe
+            .col
+                table.table.table-sm.table-responsive-sm
+                    thead
+                        tr
+                            th(scope="col") hardware
+                            th(scope="col") nombre
+                            th(scope="col") modelo
+                            th(socpe="col") Marca
+                            th(scope="col") Descripcion
+                            th(scope="col") Año de lanzamiento
+                            th(scope="col") Link de imagen
+                            th(scope="col") Acciones
+                    tbody
+                    if ok 
+                        each dato in datos
+                            tr  
+                                td.d-none=dato._id    
+                                td=dato.hardware
+                                td=dato.nombre
+                                td=dato.modelo
+                                td=dato.marca
+                                td=dato.descripcion
+                                td=dato.lanzamiento 
+                                td
+                                    img.img-fluid(src=dato.link)
+                                td
+                                    button.btn.btn-info#btnEditar Actualizar 
+                                    a.button.btn.btn-danger(href= `/delete/${dato._id}`) Eliminar
+                    else    
+                        tr
+                            td Ingrese un contacto primero 
+                            td Ingrese un contacto primero
+                            td Ingrese un contacto primero
+                            td Ingrese un contacto primero
+                            td Ingrese un contacto primero
+                            td Ingrese un contacto primero
+                            td Ingrese un contacto primero
+                            td 
+                                button.btn.btn-info(disabled="true")#btnEditar Actualizar
+                                
+                                button.btn.btn-danger(disabled="true") Eliminar
+    include ../includes/modal.pug                      
+                            
+        // tabla
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
+    script(src="/static/js/modal.js")
+    
+    

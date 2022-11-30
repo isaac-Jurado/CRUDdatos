@@ -1,0 +1,51 @@
+#modalDato.modal.fade(tabindex="-1" aria-labelledby="modalDato" aria-hidden="true")
+  .modal-dialog
+    .modal-content
+        .modal-header.bg-dark.bg-gradient.text-white
+            h5(class="modal-title" id="exampleModalLabel") Editar Datos
+            button(type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close")
+        .modal-body.bg-secondary.bg-gradient.text-light
+            form(action="/update" method="POST")
+                input(name="edit_id" id="edit_id" type="text" hidden)
+                .mb-3
+                .row 
+                    .col    
+                        .mb-3
+                            label.form-label(for="hardware") Hardware
+                            input.form-control#edit_hardware(type="text" aria-describedby="hardwareHelp" name="hardware" placeholder="hardware ")
+                            .form-text.text-light#hardwareHelp Por favor ingresa un hardware.
+                    .col 
+                        .mb-3
+                            label.form-label(for="nombre") Nombre
+                            input.form-control#edit_nombre(type="nombre" aria-describedby="nombreHelp" name="nombre" placeholder="nombre ")
+                            .form-text.text-light#nombreHelp Por favor ingresa un nombre valido.
+                .row 
+                    .col         
+                        .mb-3
+                            label.form-label(for="modelo") Modelo
+                            input.form-control#edit_modelo(type="text" aria-describedby="modeloHelp" name="modelo" placeholder="modelo")
+                            .form-text.text-light#modeloHelp Por favor ingresa un modelo valido.   
+                    .col
+                        .mb-3 
+                            label.form-label(for="marca") Marca
+                            input.form-control#edit_marca(type="text" aria-describedby="marcaHelp" name="marca" placeholder="Marca")
+                            .form-text.text-light#marcaHelp Por favor ingresa una marca valida.
+                .row
+                    .col         
+                        .mb-3
+                            label.form-label(for="descripcion") Descripcion
+                            input.form-control#edit_descripcion(type="text" aria-describedby="descripcionHelp" name="descripcion" placeholder="descripcion")
+                            .form-text.text-light#descripcionHelp Por favor ingresa una descripcion.   
+                    .col
+                        .mb-3 
+                            label.form-label(for="lanzamiento") Año de lanzamiento
+                            input.form-control#edit_lanzamiento(type="text" aria-describedby="lanzamientoHelp" name="lanzamiento" placeholder="año de lanzamiento")
+                            .form-text.text-light#lanzamientoHelp Por favor ingresa un año valido. 
+                .row
+                    .col 
+                        .mb-3
+                            label.form-label(for="link") Link de imagen
+                            input.form-control#edit_link(type="text" aria-describedby="linkHelp" name="link" placeholder="link de imagen")
+                            .form-text.text-light#linkHelp Por favor ingresa una url valida
+                        .d-grid
+                        button(type="submit" class="btn btn-primary") Actualizar
